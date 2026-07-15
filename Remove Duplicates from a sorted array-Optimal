@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.println("Enter the sorted array elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        if (n == 0) {
+            System.out.println("Array is empty.");
+            return;
+        }
+
+        int i = 0;
+
+        for (int j = 1; j < n; j++) {
+            if (arr[i] != arr[j]) {
+                i++;
+                arr[i] = arr[j];
+            }
+        }
+
+        System.out.println("Array after removing duplicates:");
+
+        for (int k = 0; k <= i; k++) {
+            System.out.print(arr[k] + " ");
+        }
+
+        System.out.println("\nLength of unique array: " + (i + 1));
+    }
+}
