@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int i = 0; i < n; i++) {
+            set.add(arr[i]);
+        }
+
+        System.out.println("Array after removing duplicates:");
+
+        for (int x : set) {
+            System.out.print(x + " ");
+        }
+
+        System.out.println("\nLength of unique array: " + set.size());
+    }
+}
